@@ -16,8 +16,9 @@ export const handleLoginBtn = async (email, password) => {
 }
 
 export const handleSignupBtn = async (name, email, password) => {
+    const { data } = await axios.post('/auth/signup', { name, email, password })
     try {
-        const { data } = await axios.post('/auth/signup', { name, email, password })
+        
         await toast.success(data.msg)
         window.location.href = '/auth/login'
     } catch (error) {

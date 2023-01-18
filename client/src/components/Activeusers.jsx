@@ -25,6 +25,8 @@ function ActiveUsers({ user }) {
 
   const createNewConversation = () => {
     handleCreateNewConversation(user._id).then((conversation) => {
+      console.log(conversation)
+      console.log(user._id)
       history.push(`/chat/${conversation._id}`);
     });
   };
